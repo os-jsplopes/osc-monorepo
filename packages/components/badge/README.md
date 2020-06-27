@@ -7,5 +7,5 @@
 ```
 const badge = require('@osc/badge');
 
-// TODO: DEMONSTRATE API
+// TODO: DEMONSTRATE BADGE API
 ```
