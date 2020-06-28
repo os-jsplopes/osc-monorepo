@@ -8,6 +8,7 @@
   "devDependencies": {
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^5.3.19",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
     "@types/jest": "^26.0.3",
@@ -38,6 +39,8 @@
     "lerna:bootstrap": "lerna bootstrap --use-workspaces",
     "dev": "start-storybook -p 5555",
     "coverage:test": "jest --coverage",
-    "unit:test": "jest"
+    "unit:test": "jest",
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
   }
 }
