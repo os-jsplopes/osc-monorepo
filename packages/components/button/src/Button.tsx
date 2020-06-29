@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonStyle = styled.button`
-  background: red;
+  background: grey;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
