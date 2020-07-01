@@ -13,7 +13,9 @@
     "@testing-library/react": "^10.4.3",
     "@types/jest": "^26.0.3",
     "babel-loader": "^8.1.0",
+    "commitizen": "^4.1.2",
     "fork-ts-checker-webpack-plugin": "^5.0.5",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-haste-map": "^26.1.0",
     "jest-resolve": "^26.1.0",
@@ -31,6 +33,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
   },
   "scripts": {
     "lerna": "lerna",
