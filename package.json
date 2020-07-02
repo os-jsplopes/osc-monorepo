@@ -20,6 +20,7 @@
     "jest": "^26.1.0",
     "jest-haste-map": "^26.1.0",
     "jest-resolve": "^26.1.0",
+    "jest-sonar-reporter": "^2.0.0",
     "jest-styled-components": "^7.0.2",
     "lerna": "^3.22.1",
     "microbundle": "^0.12.2",
@@ -39,6 +40,11 @@
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
+  },
+  "jestSonar": {
+    "reportPath": ".sonar",
+    "reportFile": "reporter.xml",
+    "indent": 4
   },
   "scripts": {
     "lerna": "lerna",
