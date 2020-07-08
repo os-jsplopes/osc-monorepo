@@ -1,7 +1,7 @@
 # osc-monorepo
 
 OS components monorepo
-[Documentation](https://os-jsplopes.github.io/osc-monorepo/?path=/story/badge--default)
+[Documentation 📚](https://os-jsplopes.github.io/osc-monorepo/?path=/story/badge--default)
 
 <a href="https://os-jsplopes.github.io/osc-monorepo/" target="_blank"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg"></a>
 
@@ -14,5 +14,4 @@ OS components monorepo
 # Packages
 
 [Badge](packages/badge/README.md)
-
 [Button](packages/button/README.md)
