@@ -20,7 +20,7 @@ labelPRBasedOnFilePath:
   # Add 'docs' label to any change to *.stories.tsx and Reademe.md files within the packages dir
   docs:
     - packages/**/*.stories.tsx
-    - packages/**/Readme.md
+    - packages/**/*.md
 
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
