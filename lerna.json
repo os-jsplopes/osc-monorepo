@@ -1,7 +1,6 @@
 {
   "packages": [
-    "packages/features/*",
-    "packages/components/*"
+    "packages/*"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,

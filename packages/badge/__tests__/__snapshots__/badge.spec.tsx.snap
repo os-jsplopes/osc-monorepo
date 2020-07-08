@@ -6,19 +6,19 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="sc-AxjAm hRvExc"
+        class="sc-AxjAm iRfZqy"
         kind="default"
       >
-        Test
+        3
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="sc-AxjAm hRvExc"
+      class="sc-AxjAm iRfZqy"
       kind="default"
     >
-      Test
+      3
     </span>
   </div>,
   "debug": [Function],

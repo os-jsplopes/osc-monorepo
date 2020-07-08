@@ -2,8 +2,7 @@
   "name": "root",
   "private": true,
   "workspaces": [
-    "packages/features/*",
-    "packages/components/*"
+    "packages/*"
   ],
   "devDependencies": {
     "@storybook/preset-typescript": "^3.0.0",
@@ -52,8 +51,7 @@
     "lerna:build": "lerna run build",
     "lerna:bootstrap": "lerna bootstrap --use-workspaces",
     "dev": "start-storybook -p 5555",
-    "coverage:test": "jest --coverage",
-    "unit:test": "jest",
+    "test": "jest",
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"
   },

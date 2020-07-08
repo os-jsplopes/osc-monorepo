@@ -1,8 +1,8 @@
 module.exports = {
   roots: ["<rootDir>/packages"],
-  transform: {
-    "^.+\\.tsx?$": "ts-jest",
-  },
+  transform: { "^.+\\.(ts|tsx)$": "ts-jest" },
+  transformIgnorePatterns: ["<rootDir>/node_modules/"],
+  collectCoverage: true,
   cacheDirectory: ".jest-cache",
   coverageDirectory: ".jest-coverage",
   coveragePathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/lib/"],
@@ -17,4 +17,5 @@ module.exports = {
   },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/lib/"],
   reporters: ["default"],
+  testResultsProcessor: "jest-sonar-reporter",
 };
