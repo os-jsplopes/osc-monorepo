@@ -40,7 +40,9 @@ jobs:
         - name: Setup git
           run: |
             git config --global user.name ${{github.event.pusher.name}}
-            git config --global user.email ${{github.event.pusher.email}}  
+            git config --global user.email ${{github.event.pusher.email}}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         - uses: danielchabr/pr-has-one-of-labels@master
           id: label_check
           with:
