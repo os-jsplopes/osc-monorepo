@@ -1,4 +1,4 @@
-name: Close Pull Request
+name: Merge Pull Request
 
 on:
   pull_request:
@@ -14,12 +14,13 @@ jobs:
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
 
     steps:
+      - name: label
       - uses: danielchabr/pr-has-one-of-labels@master
-        id: checkDocsLabel
+        id: label_check
         with:
-          hasAll: docs
+          hasSome: docs, stories
       - name: Verify Label
-        if: contains(${{ steps.docs-check.outputs }}, 'passed') == false
+        if: contains(${{ steps.label_check.outputs }}, 'passed') == false
         run: exit 1
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
