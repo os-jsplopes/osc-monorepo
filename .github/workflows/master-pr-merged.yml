@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish Storybook
     if: github.event.pull_request.merged == true
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: danielchabr/pr-has-one-of-labels@master
