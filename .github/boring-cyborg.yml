@@ -3,7 +3,7 @@
 labelPRBasedOnFilePath:
   # Add 'package' to any changes within 'packages' folder or any subfolders
   package:
-    - packages/**/*
+    - packages/**/src/**/*
 
   # Add 'ci' to any changes within '.github' folder or any subfolders
   ci:
