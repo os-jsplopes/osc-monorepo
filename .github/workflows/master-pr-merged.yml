@@ -1,0 +1,29 @@
+name: Close Pull Request
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+
+jobs:
+  storybook:
+    runs-on: ubuntu-latest
+    name: Publish Storybook
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
+
+    steps:
+      - uses: danielchabr/pr-has-one-of-labels@master
+        id: checkDocsLabel
+        with:
+          hasAll: docs
+      - name: Verify Label
+        if: contains(${{ steps.docs-check.outputs }}, 'passed') == false
+        run: exit 1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: yarn build-storybook
+      - run: yarn deploy-storybook
