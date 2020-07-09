@@ -1,6 +1,6 @@
 # `@osc/button`
 
-> TODO: description
+> TODO: create button description
 
 ## Usage
 
