@@ -23,3 +23,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  docs-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: danielchabr/pr-has-one-of-labels@master
+        id: checkDocsLabel
+        with:
+          hasAll: docs
+  storybook:
+    if: checkDocsLabel == true
+    runs-on: ubuntu-latest
+    name: Publish Storybook
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - run: yarn build-storybook
+      - run: yarn deploy-storybook
