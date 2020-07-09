@@ -1,6 +1,6 @@
 # `label`
 
-> TODO: description for label 2
+> TODO: description for label 3
 
 ## Usage
 
