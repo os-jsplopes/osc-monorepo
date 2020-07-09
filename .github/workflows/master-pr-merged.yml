@@ -17,7 +17,7 @@ jobs:
       - uses: danielchabr/pr-has-one-of-labels@master
         id: label_check
         with:
-          hasSome: docs, stories
+          hasSome: docs,stories
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
