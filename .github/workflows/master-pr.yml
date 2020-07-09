@@ -13,6 +13,8 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     name: Run Build, Tests and Code Quality
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
