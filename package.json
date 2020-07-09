@@ -53,7 +53,7 @@
     "dev": "start-storybook -p 5555",
     "test": "jest",
     "build-storybook": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages -- --ci"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "config": {
     "commitizen": {
