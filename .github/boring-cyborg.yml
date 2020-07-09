@@ -17,10 +17,13 @@ labelPRBasedOnFilePath:
   test:
     - packages/**/*.spec.tsx
 
-  # Add 'docs' label to any change to *.stories.tsx and Reademe.md files within the packages dir
+  # Add 'docs' label to any change to *.md files within the packages dir
   docs:
-    - packages/**/*.stories.tsx
     - packages/**/*.md
+
+  # Add 'stories' label to any change to *.stories.tsx files within the packages dir
+  stories:
+    - packages/**/*.stories.tsx
 
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
