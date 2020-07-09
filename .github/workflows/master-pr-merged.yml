@@ -22,8 +22,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
-      - run: npx @storybook/storybook-deployer
+      - run: yarn install
       - name: Deploy storybook to Github Pages
-        run: storybook-to-ghpages --ci
+        run: yarn deploy-storybook --ci
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
