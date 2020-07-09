@@ -49,4 +49,5 @@ jobs:
         - name: Publish minor Packages
           if: contains(github.event.pull_request.title,'feat') == 'true'
           run: yarn publish minor
+          
        
