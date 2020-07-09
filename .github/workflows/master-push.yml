@@ -31,7 +31,7 @@ jobs:
         with:
           hasAll: docs
   storybook:
-    if: checkDocsLabel == true
+    if: ${{steps.docs-check.outputs.passed}}
     runs-on: ubuntu-latest
     name: Publish Storybook
 
