@@ -24,10 +24,6 @@ jobs:
           node-version: "12.x"
       - run: yarn install
       - run: yarn build-storybook
-      - name: Setup git
-        run: |
-          git config --global user.name ${{github.event.pusher.name}}
-          git config --global user.email ${{github.event.pusher.email}}
       - name: Deploy storybook to Github Pages
         run: yarn deploy-storybook -- -ci
         env:
