@@ -45,10 +45,7 @@ jobs:
         - run: yarn build
         - name: Publish patch Packages
           if: contains(github.event.pull_request.title,'fix') == true
-          run: yarn publish patch
+          run: yarn lerna publish patch
         - name: Publish minor Packages
           if: contains(github.event.pull_request.title,'feat') == true
-          run: yarn publish minor
-          
-       
-       
+          run: yarn lerna publish minor
