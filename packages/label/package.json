@@ -1,0 +1,41 @@
+{
+  "name": "@os-jsplopes/label",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Júlio Lopes <julio.lopes@outsystems.com>",
+  "homepage": "https://github.com/os-jsplopes/osc-monorepo#readme",
+  "license": "MIT",
+  "main": "lib/label.js",
+  "umd:main": "lib/label.umd.js",
+  "module": "lib/label.m.js",
+  "esmodule": "lib/label.modern.js",
+  "types": "lib/label.d.ts",
+  "source": "src/Label.tsx",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/os-jsplopes/osc-monorepo.git"
+  },
+  "scripts": {
+    "build": "microbundle --jsx",
+    "dev": "microbundle watch --jsx",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/os-jsplopes/osc-monorepo/issues"
+  },
+  "peerDependencies": {
+    "react": ">= 16.13.1",
+    "react-dom": ">= 16.13.1",
+    "styled-components": ">= 5.1.1"
+  }
+}
