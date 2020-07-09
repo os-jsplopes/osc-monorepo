@@ -48,7 +48,7 @@
   "scripts": {
     "lerna": "lerna",
     "lerna:create": "lerna create --registry=https://npm.pkg.github.com",
-    "lerna:build": "lerna run build",
+    "build": "lerna run build",
     "lerna:bootstrap": "lerna bootstrap --use-workspaces",
     "dev": "start-storybook -p 5555",
     "test": "jest",
