@@ -50,3 +50,4 @@ jobs:
           if: contains(github.event.pull_request.title,'feat') == 'true'
           run: yarn publish minor
        
+       
