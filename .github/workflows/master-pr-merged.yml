@@ -27,4 +27,4 @@ jobs:
       - name: Deploy storybook to Github Pages
       - run: yarn deploy-storybook
         env:
-          GH_TOKEN: MyCompany:${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: os-jsplopes:${{ secrets.GITHUB_TOKEN }}
