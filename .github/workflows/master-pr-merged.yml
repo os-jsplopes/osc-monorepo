@@ -37,6 +37,10 @@ jobs:
         - uses: actions/setup-node@v1
           with:
             node-version: "12.x"
+        - name: Setup git
+          run: |
+            git config --global user.name ${{github.event.pusher.name}}
+            git config --global user.email ${{github.event.pusher.email}}  
         - uses: danielchabr/pr-has-one-of-labels@master
           id: label_check
           with:
