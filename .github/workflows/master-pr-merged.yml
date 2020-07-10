@@ -44,6 +44,10 @@ jobs:
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: replace token
+        run: echo "$(sed 's/\(_authToken=\)[a-z0-9]*\($\)/\1${{ env.GITHUB_TOKEN }}\2/g' .npmrc)" > .npmrc
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - uses: danielchabr/pr-has-one-of-labels@master
         id: label_check
         with:
