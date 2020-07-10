@@ -3,4 +3,5 @@ node_modules
 .jest-coverage
 .out
 .sonar
+.npmrc
 yarn-error.log
