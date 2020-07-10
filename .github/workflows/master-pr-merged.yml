@@ -30,29 +30,29 @@ jobs:
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
   packages:
-      runs-on: ubuntu-latest
-      name: Publish Packages
-      if: github.event.pull_request.merged == true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+    name: Publish Packages
+    if: github.event.pull_request.merged == true
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: "12.x"
-        - uses: fregante/setup-git-token@v1
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-        - uses: danielchabr/pr-has-one-of-labels@master
-          id: label_check
-          with:
-            hasAll: packages
-        - run: yarn install
-        - run: yarn build
-        - name: Publish patch Packages
-          if: contains(github.event.pull_request.title,'fix') == true
-          run: yarn lerna publish patch --yes
-        - name: Publish minor Packages
-          if: contains(github.event.pull_request.title,'feat') == true
-          run: yarn lerna publish minor --yes
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: danielchabr/pr-has-one-of-labels@master
+        id: label_check
+        with:
+          hasAll: package
+      - run: yarn install
+      - run: yarn build
+      - name: Publish patch Packages
+        if: contains(github.event.pull_request.title,'fix') == true
+        run: yarn lerna publish patch --yes
+      - name: Publish minor Packages
+        if: contains(github.event.pull_request.title,'feat') == true
+        run: yarn lerna publish minor --yes
