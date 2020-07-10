@@ -52,9 +52,8 @@ jobs:
       - run: yarn build
       - name: Authenticate
         run: |
+          echo "@os-jsplopes:registry=https://npm.pkg.github.com/" >> .npmrc
           echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
-          git add .
-          git commit -m "chore: add line to npmrc"
       - name: Publish patch Packages
         if: contains(github.event.pull_request.title,'fix') == true
         run: yarn lerna publish patch --yes
