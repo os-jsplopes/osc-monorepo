@@ -11,6 +11,6 @@ interface ILabelProps {
   text: string;
 }
 
-const Label: FC<ILabelProps> = ({ text }: ILabelProps) => <LabelStyle>{text}</LabelStyle>;
+const Label: FC<ILabelProps> = ({ text }: ILabelProps) => <LabelStyle>My {text}</LabelStyle>;
 
 export default Label;
