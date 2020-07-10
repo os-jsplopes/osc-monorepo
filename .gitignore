@@ -3,3 +3,4 @@ node_modules
 .jest-coverage
 .out
 .sonar
+yarn-error.log
