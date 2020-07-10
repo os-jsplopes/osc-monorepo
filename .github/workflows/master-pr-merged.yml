@@ -44,16 +44,14 @@ jobs:
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: replace token
-        run: echo "$(sed 's/\(_authToken=\)[a-z0-9]*\($\)/\1${{ env.GITHUB_TOKEN }}\2/g' .npmrc)" > .npmrc
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - uses: danielchabr/pr-has-one-of-labels@master
         id: label_check
         with:
           hasAll: package
       - run: yarn install
       - run: yarn build
+      - name: Authenticate
+        run: echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> .npmrc
       - name: Publish patch Packages
         if: contains(github.event.pull_request.title,'fix') == true
         run: yarn lerna publish patch --yes
