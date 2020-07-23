@@ -1,0 +1,40 @@
+{
+  "name": "<%= scope %>/<%= pkgName %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
+  "author": "<%= user %> <<%= email %>>",
+  "homepage": "<%= homepage %>",
+  "license": "MIT",
+  "main": "lib/<%= pkgName %>.js",
+  "umd:main": "lib/<%= pkgName %>.umd.js",
+  "module": "lib/<%= pkgName %>.m.js",
+  "esmodule": "lib/<%= pkgName %>.modern.js",
+  "types": "lib/<%= pkgName %>.d.ts",
+  "source": "src/<%= sourceFile %>.tsx",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "<%= pkgRegistry %>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+<%= repository %>.git"
+  },
+  "scripts": {
+    "build": "microbundle --jsx",
+    "dev": "microbundle watch --jsx",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "<%= repository %>/issues"
+  },
+  "peerDependencies": {
+    "react": ">= 16.13.1",
+    "react-dom": ">= 16.13.1"
+  }
+}
